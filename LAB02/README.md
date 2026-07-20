@@ -11,5 +11,4 @@ ML-CPE/
 │   ├── ML_LAB2.ipynb  
 │   ├── dataset/  
 │       └── synthetic_heart_disease_dataset.csv  
-│   ├── report.pdf  
 │   └── README.md  
