@@ -19,19 +19,19 @@ This project builds a full-stack Machine Learning pipeline designed to handle re
 
 Click on any lab link below to view its specific documentation, code, and findings:
 
-│
-├── 📁 [LAB02/](./LAB02/README.md) — *Data Preprocessing & Regression Analysis*
-│   ├── 📁 [dataset/](./LAB02/dataset/)
-│   │   └── 📄 `synthetic_heart_disease_dataset.csv`
-│   ├── 📓 [ML_LAB2.ipynb](./LAB02/ML_LAB2.ipynb)
-│   └── 📄 [README.md](./LAB02/README.md) *(Lab 2 Details)*
-│
-├── 📁 [LAB03/](./LAB03/README.md) — *Classification Modeling & Evaluation*
-│   ├── 📓 [ML_LAB3.ipynb](./LAB03/ML_LAB3.ipynb)
-│   └── 📄 [README.md](./LAB03/README.md) *(Lab 3 Details)*
-│
-├── 📄 `.gitignore`
-└── 📄 `README.md` *(Main Overview)*
+│  
+├── 📁 [LAB02/](./LAB02/README.md) — *Data Preprocessing & Regression Analysis*  
+│   ├── 📁 [dataset/](./LAB02/dataset/)  
+│   │   └── 📄 `synthetic_heart_disease_dataset.csv`  
+│   ├── 📓 [ML_LAB2.ipynb](./LAB02/ML_LAB2.ipynb)  
+│   └── 📄 [README.md](./LAB02/README.md) *(Lab 2 Details)*  
+│  
+├── 📁 [LAB03/](./LAB03/README.md) — *Classification Modeling & Evaluation*  
+│   ├── 📓 [ML_LAB3.ipynb](./LAB03/ML_LAB3.ipynb)  
+│   └── 📄 [README.md](./LAB03/README.md) *(Lab 3 Details)*  
+│  
+├── 📄 `.gitignore`  
+└── 📄 `README.md` *(Main Overview)*  
 
 ---
 
