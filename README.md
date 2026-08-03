@@ -61,10 +61,7 @@ To run the labs in this repository, clone the repo and install the required depe
 
 ```bash
 # Clone repository
-git clone [https://github.com/your-username/ML-CPE.git](https://github.com/your-username/ML-CPE.git)
+git clone [https://github.com/่jujup1t3r/ML-CPE.git](https://github.com/jujup1t3r/ML-CPE.git)
 
 # Navigate into the project
 cd ML-CPE
-
-# Install required dependencies
-pip install -r LAB04/requirements.txt
