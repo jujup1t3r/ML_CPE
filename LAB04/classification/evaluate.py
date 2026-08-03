@@ -11,10 +11,12 @@ def evaluate_and_save(y_test, y_pred, output_cm="outputs/02_confusion_matrix.png
     print(classification_report(y_test, y_pred))
 
     # 2. Save Confusion Matrix Plot
-    cm = confusion_matrix(y_test, y_pred)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-    disp.plot(cmap=plt.cm.Blues)
-    plt.title("Confusion Matrix")
+    cm_percentage = confusion_matrix(y_test, y_pred, normalize='true') * 100
+    fig, ax = plt.subplots(figsize=(6, 5))
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm_percentage, display_labels=["No Disease", "Disease"])
+    disp.plot(cmap=plt.cm.Blues, ax=ax, values_format='.2f')
+
+    plt.title("Confusion Matrix (%)")
     plt.savefig(output_cm, bbox_inches='tight')
     plt.close()
 
