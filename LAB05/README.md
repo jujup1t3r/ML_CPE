@@ -11,22 +11,22 @@ This lab implements an end-to-end Support Vector Machine (SVM) pipeline for **EC
 3. **Evaluation:** Evaluates model performance using accuracy metrics, confusion matrix visualizations, and saved evaluation reports (`classes.json`, `confusion_matrix.png`).
 
 ---
-## 📥 Dataset Setup Instructions
+## 📊 Dataset Information & Setup
 
-The dataset file is too large to be hosted directly on GitHub. Please follow these steps to set up the dataset before running the code:
+This lab uses the **ECG Image Dataset** from Kaggle. Due to size limitations on GitHub, the dataset images are excluded from this repository and must be downloaded separately.
 
-1. **Download Dataset:** 
-   - Download `heart_disease_dataset.csv` from [Google Drive Download Link](ใส่_URL_แชร์ไฟล์ของคุณตรงนี้) *(or from [Kaggle Source](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset))*
+* **Dataset Source:** [Kaggle - ECG Image Dataset](https://www.kaggle.com/datasets/kanishkarathore1604/ecg-image)
 
-2. **Place the Dataset:**
-   - Create a directory named `data-heart/` inside the project root folder (if it doesn't exist).
-   - Place `heart_disease_dataset.csv` into the `data-heart/` directory:
+### 📥 Download & Data Path Setup
+
+1. Download the dataset zip file directly from [Kaggle](https://www.kaggle.com/datasets/kanishkarathore1604/ecg-image).
+2. Extract the contents into the `LAB05/` directory in your local project root:
 
 ## 📁 LAB05 Directory Structure
 
 ```text
 LAB05/
-├── archive (1)/
+├── archive/
 │   └── ECG_DATA/
 │       ├── test/
 │       └── train/
