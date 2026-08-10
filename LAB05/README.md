@@ -20,7 +20,7 @@ LAB05/
 │   └── ECG_DATA/
 │       ├── test/
 │       └── train/
-├── outputs/
+├── outputs/   <-- (Generated after running main.py)
 │   ├── classes.json
 │   ├── confusion_matrix.png
 │   ├── images.npy
