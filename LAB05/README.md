@@ -11,6 +11,16 @@ This lab implements an end-to-end Support Vector Machine (SVM) pipeline for **EC
 3. **Evaluation:** Evaluates model performance using accuracy metrics, confusion matrix visualizations, and saved evaluation reports (`classes.json`, `confusion_matrix.png`).
 
 ---
+## 📥 Dataset Setup Instructions
+
+The dataset file is too large to be hosted directly on GitHub. Please follow these steps to set up the dataset before running the code:
+
+1. **Download Dataset:** 
+   - Download `heart_disease_dataset.csv` from [Google Drive Download Link](ใส่_URL_แชร์ไฟล์ของคุณตรงนี้) *(or from [Kaggle Source](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset))*
+
+2. **Place the Dataset:**
+   - Create a directory named `data-heart/` inside the project root folder (if it doesn't exist).
+   - Place `heart_disease_dataset.csv` into the `data-heart/` directory:
 
 ## 📁 LAB05 Directory Structure
 
