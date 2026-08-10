@@ -1,4 +1,4 @@
-# 🫀 LAB 04: KNN Classification & K-Means Clustering
+# LAB 04: KNN Classification & K-Means Clustering
 
 This lab implements an end-to-end Machine Learning pipeline using K-Nearest Neighbors (KNN) for disease classification and K-Means for patient health clustering on a Heart Disease Dataset.
 
