@@ -1,6 +1,6 @@
 # 🤖 ML-CPE: Machine Learning Pipeline Project
 
-This repository contains Machine Learning coursework and lab implementations, covering data preprocessing, regression analysis, classification, clustering, support vector machines, and deep neural networks with medical image classification.
+This repository contains Machine Learning coursework and lab implementations, covering data preprocessing, regression analysis, classification, clustering, support vector machines, deep neural networks, and convolutional neural networks with medical image classification.
 
 ---
 
@@ -13,8 +13,9 @@ This project builds a full-stack Machine Learning pipeline designed to handle re
 3. **Classification Modeling:** Categorical prediction of heart disease risks (Logistic Regression & KNN).
 4. **Clustering Analysis:** Unsupervised patient health risk grouping using K-Means.
 5. **Support Vector Machines (SVM):** Supervised decision boundary classification on medical imaging and clinical features.
-6. **Deep Neural Networks (CNN/MLP):** Image classification of Electrocardiogram (ECG) heart disease data using TensorFlow/Keras.
-7. **Model Performance Evaluation:** Comparative analysis across models, loss curves, confusion matrices, and classification metrics.
+6. **Deep Neural Networks (NN/MLP):** Image classification of Electrocardiogram (ECG) heart disease data using TensorFlow/Keras.
+7. **Convolutional Neural Networks (CNN):** 2D Feature extraction and classification on visual pattern data using Conv2D, Batch Normalization, and Max Pooling.
+8. **Model Performance Evaluation:** Comparative analysis across models, loss curves, confusion matrices, and classification metrics.
 
 ---
 
@@ -63,6 +64,17 @@ ML-CPE/
 │   ├── 📁 outputs/
 │   └── 📄 [README.md](./LAB06/README.md)
 │
+├── 📁 [LAB07/](./LAB07/README.md) — Convolutional Neural Networks (CNN) Image Recognition
+│   ├── 📄 data_loader.py
+│   ├── 📄 preprocessing.py
+│   ├── 📄 split_data.py
+│   ├── 📄 cnn_model.py
+│   ├── 📄 evaluate.py
+│   ├── 📄 main.py
+│   ├── 📄 test_cnn.py
+│   ├── 📁 outputs/
+│   └── 📄 [README.md](./LAB07/README.md)
+│
 ├── 📄 .gitignore
 └── 📄 README.md
 ---
@@ -76,6 +88,7 @@ ML-CPE/
 | **LAB 04** | KNN Classification & K-Means Clustering | [classification/](./LAB04/classification/), [clustering/](./LAB04/clustering/) | [View README](./LAB04/README.md) |
 | **LAB 05** | Support Vector Machine (SVM) | [svm_model.py](./LAB05/svm_model.py), [main.py](./LAB05/main.py) | [View README](./LAB05/README.md) |
 | **LAB 06** | Neural Networks & ECG Image Classification | [nn_model.py](./LAB06/nn_model.py), [main.py](./LAB06/main.py) | [View README](./LAB06/README.md) |
+| **LAB 07** | Convolutional Neural Networks (CNN) | [cnn_model.py](./LAB07/cnn_model.py), [main.py](./LAB07/main.py) | [View README](./LAB07/README.md) |
 
 ---
 
