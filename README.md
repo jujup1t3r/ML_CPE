@@ -77,6 +77,8 @@ ML-CPE/
 │
 ├── 📄 .gitignore
 └── 📄 README.md
+```
+
 ---
 
 ## 🚀 Quick Links to Labs
@@ -105,3 +107,4 @@ cd ML-CPE
 
 # 3. Install all required dependencies
 pip install tensorflow opencv-python matplotlib seaborn scikit-learn numpy pandas joblib jupyter
+```
