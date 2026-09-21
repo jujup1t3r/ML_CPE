@@ -11,7 +11,7 @@ def split_dataset(X, y, test_size=0.2, val_size=0.1):
     y = np.asarray(y)
 
     # First carve off the test set
-    X_train, X_test, y_train, y_test = train_test_split(
+    X_train, X_test, y_train, y_test = train_test_split( 
         X, y, test_size=test_size,
         random_state=42,
         stratify=y

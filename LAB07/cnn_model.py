@@ -5,10 +5,17 @@ from tensorflow.keras import layers
 
 
 def build_model(input_shape, num_classes):
-    """Convolutional Neural Network (CNN) for ECG Image Classification."""
+    """Convolutional Neural Network with data augmentation and flexible classification head."""
+    is_binary = (num_classes == 2)
+
     model = keras.Sequential([
         keras.Input(shape=input_shape),
         layers.Rescaling(1.0 / 255),
+
+        # Data Augmentation (ช่วยลด Overfitting สำหรับชุดข้อมูลทั่วไป)
+        layers.RandomFlip("horizontal"),
+        layers.RandomRotation(0.1),
+        layers.RandomZoom(0.1),
 
         # Block 1
         layers.Conv2D(32, (3, 3), activation="relu", padding="same"),
@@ -25,24 +32,28 @@ def build_model(input_shape, num_classes):
         layers.BatchNormalization(),
         layers.MaxPooling2D((2, 2)),
 
-        # Dense Classifier Head
-        layers.Flatten(),
+        # Classifier Head
+        layers.GlobalAveragePooling2D(),
         layers.Dense(128, activation="relu"),
         layers.BatchNormalization(),
         layers.Dropout(0.3),
-        layers.Dense(num_classes, activation="softmax")
+        layers.Dense(
+            1 if is_binary else num_classes,
+            activation="sigmoid" if is_binary else "softmax"
+        )
     ])
 
+    loss_fn = "binary_crossentropy" if is_binary else "sparse_categorical_crossentropy"
     model.compile(
         optimizer=keras.optimizers.Adam(learning_rate=5e-4),
-        loss="sparse_categorical_crossentropy",
+        loss=loss_fn,
         metrics=["accuracy"]
     )
     return model
 
 
 def train_model(X_train, y_train, X_val, y_val, num_classes,
-                output_dir=None, epochs=30, batch_size=32): 
+                output_dir=None, epochs=30, batch_size=32):
     """Build, train, and save the model."""
     model = build_model(X_train.shape[1:], num_classes)
     model.summary()
@@ -56,7 +67,7 @@ def train_model(X_train, y_train, X_val, y_val, num_classes,
         )
     ]
 
-    print("\nTraining CNN Model on ECG Images...")
+    print("\nTraining CNN Model...")
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
@@ -68,15 +79,17 @@ def train_model(X_train, y_train, X_val, y_val, num_classes,
 
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
-        model.save(os.path.join(output_dir, "nn_model.keras"))
+        model.save(os.path.join(output_dir, "cnn_model.keras"))
         with open(os.path.join(output_dir, "history.json"), "w") as f:
             json.dump({k: [float(v) for v in vs] for k, vs in history.history.items()}, f)
-        print(f"Saved: {os.path.join(output_dir, 'nn_model.keras')}")
+        print(f"Saved: {os.path.join(output_dir, 'cnn_model.keras')}")
 
     return model, history
 
 
 def predict_model(model, X_test):
-    """Predict class indices."""
+    """Predict class indices for both binary and multiclass setups."""
     probabilities = model.predict(X_test, verbose=0)
+    if probabilities.shape[-1] == 1:
+        return (probabilities.ravel() > 0.5).astype(int)
     return probabilities.argmax(axis=1)
